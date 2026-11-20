@@ -1,0 +1,23 @@
+{
+  "name": "nakladni-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Telegram-бот: .mmo накладна → гарна Excel-таблиця з цінами й термінами з прайсу",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "start": "node --env-file=.env src/bot.ts",
+    "report": "node src/cli.ts",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "grammy": "^1.46.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}

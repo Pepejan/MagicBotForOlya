@@ -1,0 +1,11 @@
+services:
+  bot:
+    build: .
+    container_name: nakladni-bot
+    # BOT_TOKEN, MY_ID, SISTER_ID і EXTRA_IDS беруться з .env
+    env_file: .env
+    # Прайс лежить на хості в ./data, тож оновлення через бота переживуть перезбирання контейнера.
+    volumes:
+      - ./data:/app/data
+    # Після перезавантаження комп'ютера чи падіння бот підніметься сам.
+    restart: unless-stopped
